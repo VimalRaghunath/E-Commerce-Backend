@@ -22,3 +22,5 @@ module.exports = function verifyToken(req,res,next){
         next();
     })
 };
+
+//TODO LEARN WORKING OF JWT TOKEN

@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
     },
     cart : [{
         type: mongoose.Schema.ObjectId,
-        ref:"Product",
+        ref:"Product", //TODO REFER THIS
         required: true,
     }],
     wishlist : [{

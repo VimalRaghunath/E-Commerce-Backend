@@ -23,11 +23,12 @@ const upload = (req, res, next) => {
       return res.status(400).json({ message: err.message });
     }
 
-    if (!req.file) {
+    // if (!req.file) {
 
-      return res.status(400).json({ message: "No file uploaded." });
-    }
-
+    //   return res.status(400).json({ message: "No file uploaded." });
+    // }
+ 
+    if(req.file){
     try {
 
       const result = await cloudinary.uploader.upload(req.file.path, {
@@ -43,6 +44,8 @@ const upload = (req, res, next) => {
         .status(500)
         .json({ message: "Error uploading file to Cloudinary." });
     }
+  }
+  else{next();}
   });
 };
 
